@@ -58,8 +58,8 @@ interface GigabitEthernet2
 
 | Interface | Role          | IP Address   | VRF       |
 | --------- | ------------- | ------------ | --------- |
-| Gi0/0     | To CSW-HQ     | 10.30.0.2/30 | CUSTOMER2 |
-| Gi0/1     | LAN Interface | 10.31.0.1/24 | CUSTOMER2 |
+| G1        | To CSW-HQ     | 10.30.0.2/30 | CUSTOMER2 |
+| Gi2       | LAN Interface | 10.31.0.1/24 | CUSTOMER2 |
 
 ```bash
 interface GigabitEthernet1
