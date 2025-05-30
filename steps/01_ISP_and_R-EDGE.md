@@ -42,8 +42,6 @@ interface GigabitEthernet2
 ip route 0.0.0.0 0.0.0.0 198.168.40.1           # My personal SOHO router Gateway
 ```
 
----
-
 ### ISP2
 
 ```bash
@@ -62,8 +60,6 @@ interface GigabitEthernet2
 !
 ip route 0.0.0.0 0.0.0.0 198.168.40.1           # My personal SOHO router Gateway
 ```
-
----
 
 ### R-EDGE
 
@@ -104,7 +100,9 @@ track 1 ip sla 1 reachability
 !
 ```
 
-## Notes
+---
+
+## 4. Notes
 - The DHCP next-hop is highly dependent on your router, my personal router is 192.168.40.0/24
 - Static routing is only used here for temporary simplicity. 
 - In the `enhancements/` the static routes will be replaced with BGP (eBGP between R-EDGE and ISPs).

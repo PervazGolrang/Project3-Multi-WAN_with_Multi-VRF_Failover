@@ -19,8 +19,6 @@ ip vrf CUSTOMER1
  rd 65100:1
 ```
 
----
-
 ## BRANCH2-RTR
 ```bash
 ip vrf CUSTOMER2
@@ -55,8 +53,6 @@ interface GigabitEthernet2
  no shutdown
 ```
 
----
-
 ### BRANCH2-RTR
 
 | Interface | Role          | IP Address   | VRF       |
@@ -89,8 +85,6 @@ Each branch has a default route pointing to CSW-HQ and a directly connected LAN:
 ```bash
 ip route vrf CUSTOMER1 0.0.0.0 0.0.0.0 10.20.0.1
 ```
-
----
 
 ### BRANCH2-RTR
 ```bash

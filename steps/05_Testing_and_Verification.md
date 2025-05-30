@@ -29,8 +29,6 @@ ping vrf CUSTOMER1 10.20.0.1        ! CSW-HQ link
 ping vrf CUSTOMER1 1.1.1.1          ! Internet via NAT
 ```
 
----
-
 ### From BRANCH2-RTR
 
 ```bash
