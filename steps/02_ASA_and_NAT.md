@@ -16,9 +16,9 @@ This step configures the ASA firewall in routed mode. It connects R-EDGE (outsid
 ## 2. ASA Base Configuration
 
 ```bash
+enable
+# password is golrang1
 hostname ASA
-no enable password
-enable password golrang123
 no names
 !
 interface GigabitEthernet0/1
@@ -71,13 +71,8 @@ Ensuring the default inspection policy is beng applied:
 policy-map global_policy
  class inspection_default
   inspect icmp
-  inspect ftp
+  inspect ipv6
   inspect http
-  inspect https
-  inspect dns
-!
-service-policy global_policy global
-
 ```
 
 ---

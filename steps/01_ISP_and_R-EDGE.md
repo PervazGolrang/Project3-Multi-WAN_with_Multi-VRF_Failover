@@ -14,7 +14,7 @@ This step sets up both ISP routers and the enterprise edge router (R-EDGE). It i
 
 ## 2. Interface Overview
 
-| Link                | Subnet           | ISP Side IP     | R-EDGE Side IP   |
+| Link                | Subnet           | ISP Side IP      | R-EDGE Side IP   |
 |---------------------|------------------|------------------|------------------|
 | ISP1 ↔ R-EDGE       | 198.51.100.0/30  | 198.51.100.1     | 198.51.100.2     |
 | ISP2 ↔ R-EDGE       | 203.0.113.0/30   | 203.0.113.1      | 203.0.113.2      |
@@ -33,6 +33,13 @@ interface GigabitEthernet1
  no shutdown
 !
 ip route 192.168.10.0 255.255.255.252 198.51.100.2
+!
+interface GigabitEthernet2
+ ip address DHCP
+ description "To Internet"
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 198.168.40.1           # My personal SOHO router Gateway
 ```
 
 ---
@@ -47,6 +54,13 @@ interface GigabitEthernet1
  no shutdown
 !
 ip route 192.168.10.0 255.255.255.252 203.0.113.2
+!
+interface GigabitEthernet2
+ ip address DHCP
+ description "To Internet"
+ no shutdown
+!
+ip route 0.0.0.0 0.0.0.0 198.168.40.1           # My personal SOHO router Gateway
 ```
 
 ---
@@ -55,13 +69,15 @@ ip route 192.168.10.0 255.255.255.252 203.0.113.2
 
 ```bash
 hostname R-EDGE
+interface loopback0
+ ip address 10.255.0.1 255.255.255.255
 !
 interface GigabitEthernet1
  description "To ISP1"
  ip address 192.51.100.2 255.255.255.252
  no shutdown
 !
-inerface GigabitEthernet2
+interface GigabitEthernet2
  description "To ISP2"
  ip address 203.0.113.2 255.255.255.252
  no shutdown
@@ -75,20 +91,21 @@ ip route 0.0.0.0 0.0.0.0 192.51.100.1 track 1
 ip route 0.0.0.0 0.0.0.0 203.0.113.1 10
 !
 ip sla 1
- icmp-echo 8.8.8.8 source-ip 192.51.100.2
- frequency 5                                    # Send ping every 5 seconds
- timeout 2000                                   # If no reply wihtin 2 seconds = failed probe
- threshold 1500                                 # If reply takes over 1.5 seconds = degraded (poor)
+ icmp-echo 192.51.100.1 source-ip 192.51.100.2
+ frequency 5                                    # Send ICMP prove every 5 seconds
+ timeout 2500                                   # Declare probe failed if no reply within 2500ms
+ threshold 1500                                  # Mark probe as degraded if reply exceeds 1500ms
 !
 ip sla schedule 1 life forever start-time now
 !
 track 1 ip sla 1 reachability
- delay down 30                                  # Wait 30s of failed pings before removing route
- delay up 60                                    # Require 60s of success before restoring route
+ delay down 10                                 # Route is withdrawn after 10 consecutive seconds of failure
+ delay up 20                                   # Route is restored only after 30 consecutive seconds of success
 !
 ```
 
 ## Notes
+- The DHCP next-hop is highly dependent on your router, my personal router is 192.168.40.0/24
 - Static routing is only used here for temporary simplicity. 
 - In the `enhancements/` the static routes will be replaced with BGP (eBGP between R-EDGE and ISPs).
 - IP SLA + tracking ensures automatic failover if ISP1 is unreachable.

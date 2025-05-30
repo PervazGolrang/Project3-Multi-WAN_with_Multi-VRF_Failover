@@ -39,6 +39,9 @@ ip vrf CUSTOMER2
 | Gi2       | LAN Interface | 10.21.0.1/24 | CUSTOMER1 |
 
 ```bash
+inteface loopback0
+ ip address 10.255.1.1 255.255.255.255
+!
 interface GigabitEthernet1
  description "To CSW-HQ"
  ip vrf forwarding CUSTOMER1
@@ -62,6 +65,9 @@ interface GigabitEthernet2
 | Gi2       | LAN Interface | 10.31.0.1/24 | CUSTOMER2 |
 
 ```bash
+interface loopback0
+ ip address 10.255.1.2 255.255.255.255
+!
 interface GigabitEthernet1
  description "To CSW-HQ"
  ip vrf forwarding CUSTOMER2

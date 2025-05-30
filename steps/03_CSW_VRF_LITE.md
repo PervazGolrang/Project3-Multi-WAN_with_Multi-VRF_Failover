@@ -31,6 +31,9 @@ ip vrf CUSTOMER2
 ## 3. Interface Configuration
 
 ```bash
+interface loopback0
+ ip address 10.255.0.2 255.255.255.255
+!
 interface GigabitEthernet1
  description "To ASA inside"
  ip address 10.10.0.2 255.255.255.252

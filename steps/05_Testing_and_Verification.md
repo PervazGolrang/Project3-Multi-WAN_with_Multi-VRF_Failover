@@ -21,24 +21,22 @@ Ensure:
 
 ## 2. Ping Tests
 
-### From BRANCH1
+### From BRANCH1-RTR
 
 ```bash
 ping vrf CUSTOMER1 10.21.0.1        ! Self LAN
 ping vrf CUSTOMER1 10.20.0.1        ! CSW-HQ link
-ping vrf CUSTOMER1 10.10.0.1        ! ASA inside
-ping vrf CUSTOMER1 8.8.8.8          ! Internet via NAT
+ping vrf CUSTOMER1 1.1.1.1          ! Internet via NAT
 ```
 
 ---
 
-### From BRANCH1
+### From BRANCH2-RTR
 
 ```bash
 ping vrf CUSTOMER2 10.31.0.1
 ping vrf CUSTOMER2 10.30.0.1
-ping vrf CUSTOMER2 10.10.0.1
-ping vrf CUSTOMER2 8.8.8.8
+ping vrf CUSTOMER2 1.1.1.1
 ```
 
 ---

@@ -8,6 +8,8 @@ This document outlines the IP addressing schema used across the entire network. 
 
 | Network Segment        | Subnet             | Purpose                                  |
 |------------------------|--------------------|------------------------------------------|
+| ISP1 ↔ Internet        | 198.168.40.0/24    | DHCP from SOHO router                    |
+| ISP2 ↔ Internet        | 198.168.40.0/24    | DHCP from SOHO router                    |
 | ISP1 ↔ R-EDGE          | 198.51.100.0/30    | Uplink to ISP1                           |
 | ISP2 ↔ R-EDGE          | 203.0.113.0/30     | Uplink to ISP2                           |
 | R-EDGE ↔ ASA           | 192.168.10.0/30    | Edge to firewall connection              |
@@ -23,7 +25,7 @@ This document outlines the IP addressing schema used across the entire network. 
 
 | Device         | Loopback IP         | Use Case              |
 |----------------|---------------------|-----------------------|
-| R-EDGE         | 10.255.0.1/32       | Router-ID / reference |
+| R-EDGE         | 10.255.0.1/32       | Router-ID             |
 | CSW-HQ         | 10.255.0.2/32       | Router-ID             |
 | BRANCH1-RTR    | 10.255.1.1/32       | Router-ID             |
 | BRANCH2-RTR    | 10.255.1.2/32       | Router-ID             |
