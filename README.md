@@ -44,10 +44,12 @@ Project3-MultiVRF_Enterprise/
 
 ---
 
-## Topology
+## Network Topology
 
+![`Network Topology`](topology/project3_topology.png)
+
+### Drawio Topology
 [`project3_topology.drawio`](topology/project3_topology.drawio)  
-[`project3_topology.png`](topology/project3_topology.png)
 
 ---
 
