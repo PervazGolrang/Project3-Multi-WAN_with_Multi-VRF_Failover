@@ -22,7 +22,7 @@ This step sets up both ISP routers and the enterprise edge router (R-EDGE). It i
 
 ---
 
-## 3. ISP Configuration (example – static or BGP)
+## 3. ISP Configuration
 
 ### ISP1
 ```bash
