@@ -125,7 +125,6 @@ Should authenticate via RADIUS. If RADIUS is down, fallback to `local`.
 ---
 
 ## 4. Notes
-- No Linux or external tools are required
 - All services are simulated with routers
 - DHCP is scoped per VRF using relay and subnet targeting
 - RADIUS server is simulated using local username + VTY policy

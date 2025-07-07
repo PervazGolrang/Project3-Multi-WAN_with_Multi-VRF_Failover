@@ -72,4 +72,3 @@ ip route vrf CUSTOMER2 0.0.0.0 0.0.0.0 10.10.0.1
 - This device acts as a VRF-aware core router, separating customer/branch routing domains.
 - All branch connections use point-to-point links with /30 subnets.
 - Default routes are manually injected into each VRF to forward traffic to ASA.
-- No inter-VRF route leaking is configured at this stage.

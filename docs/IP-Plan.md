@@ -1,4 +1,4 @@
-# IP Address Plan – Project3-VRFLite-EnterpriseWAN
+# IP Address Plan - Project3-MultiVRF_Enterprise/
 
 This document outlines the IP addressing schema used across the entire network. Subnets are assigned to point-to-point WAN links, LAN segments, loopbacks, and simulated service interfaces to ensure deterministic routing and simplified troubleshooting.
 
@@ -42,7 +42,7 @@ This document outlines the IP addressing schema used across the entire network. 
 
 ## IPv6 Extensions
 
-- IPv6 dual-stack subnets are defined separately in `02_IPv6_DualStack.md` found in `enhancements/`.
+- IPv6 dual-stack subnets are defined separately in [`02_IPv6_DualStack.md`](/enhancements/02_IPv6_DualStack.md).
 - Global unicast addressing (GUA) uses `2001:db8::/32` reserved lab prefix.
 
 ---

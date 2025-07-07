@@ -71,5 +71,5 @@ show policy-map interface | include COPP
 
 ### 7. Notes
 - This is a per-interface workaround, not true CoPP. CSR1000v does not support `control-plane` configuration mode.
-- Cannot protect routing protocols (OSPF/BGP) if used, but that is not applicable in this lab
+- Cannot protect routing protocols (OSPF/BGP) if used, but that is not necessary in this lab
 - Must be manually applied **only** on R-EDGE

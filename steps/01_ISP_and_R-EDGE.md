@@ -105,6 +105,6 @@ track 1 ip sla 1 reachability
 ## 4. Notes
 - The DHCP next-hop is highly dependent on your router, my personal router is 192.168.40.0/24
 - Static routing is only used here for temporary simplicity. 
-- In the `enhancements/` the static routes will be replaced with BGP (eBGP between R-EDGE and ISPs).
+- In the [`enhancements/`](/enhancements/) folder, the static routes will be replaced with BGP (eBGP between R-EDGE and ISPs).
 - IP SLA + tracking ensures automatic failover if ISP1 is unreachable.
 - IP SLA is marked with notes so I remember the differences between the commands.

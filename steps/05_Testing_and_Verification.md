@@ -89,4 +89,4 @@ no shutdown interface GigabitEthernet1
 ---
 
 ## 6. Notes
-- This concludes the core implementation of the lab. Additional features and network enhancements are documented in the `enhancements/` directory for further development.
+- Additional features and network enhancements are documented in the [`enhancements/`](/enhancements/) folder for further development.

@@ -105,4 +105,3 @@ show ipv6 interface brief
 - This configuration uses only static routes for IPv6; no OSPFv3 or BGPv6 is deployed.
 - IPv6 unicast forwarding must be globally enabled on all devices with `ipv6 unicast-routing`
 - All interfaces are dual stack and capable of forwarding both IPv4 and IPv6.
-- NAT64 or DNS64 is not used in this enhancement.

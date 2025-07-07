@@ -88,4 +88,3 @@ ping vrf CUSTOMER2 10.21.0.1
 ## 7. Notes
 - All forwarding is based on static routes and explicit policies
 - Route-maps can be extended to match source/destination ports, DSCP, or interfaces
-- This method does not require redistribution or route leaking protocols

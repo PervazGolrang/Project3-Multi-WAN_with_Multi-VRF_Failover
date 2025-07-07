@@ -51,4 +51,4 @@ This document defines the virtual routing and forwarding (VRF) instances configu
 
 ## Inter-VRF Communication
 
-By default, no communication occurs between VRFs. Selective route leaking and PBR will be applied if following the `enhancements/` folder, for controlled access between branches.
+By default, no communication occurs between VRFs. Selective route leaking and PBR will be applied if following the [`enhancements/`](/enhancements/) folder, for controlled access between branches.
