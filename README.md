@@ -1,4 +1,4 @@
-# Project 3 - Multi-VRF Enterprise Core with Failover
+# Project 3 - Multi-site WAN with Multi-VRF and failover
 
 ## Overview
 
